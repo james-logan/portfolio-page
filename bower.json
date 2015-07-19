@@ -1,0 +1,24 @@
+{
+  "name": "portfolio-page",
+  "version": "1.0.0",
+  "homepage": "https://github.com/james-logan/portfolio-page",
+  "authors": [
+    "James Logan <jamesblogan20@gmail.com>"
+  ],
+  "main": "index.js",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.1",
+    "bootstrap": "~3.3.5",
+    "angular-route": "~1.4.1",
+    "firebase": "~2.2.7",
+    "chosen": "~1.4.2"
+  }
+}
