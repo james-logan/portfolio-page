@@ -5,6 +5,7 @@ body {
 
 div {
   background: rgba(255, 255, 255, .5);
+  box-sizing: border-box;
 }
 
 a{
@@ -37,6 +38,20 @@ a{
   }
 }
 
+li:last-child {
+  font-size: 30px !important;
+  float: right;
+  margin-top: -5px !important;
+}
+
+.right_arrow {
+  position: fixed;
+  right: 0px;
+  height: 100px;
+  width: 40px;
+  margin-top: 195px;
+}
+
 .footer {
   //sticky footer code
   position: fixed;
@@ -49,10 +64,22 @@ a{
 .picture_box {
   border-radius: 3px;
   padding: 10px;
-  width: 320px;
+  width: 230px;
   margin: 40px 10px 40px 10px;
 }
 
 .picture_box > img {
-  width: 300px;
+  // width: 300px;
+  max-height: 400px;
+}
+
+.float_l {
+  float: left;
+}
+
+.about_me_box {
+  height: 420px;
+  width: 700px;
+  margin: 40px 10px 40px 10px;
+  padding: 40px;
 }
