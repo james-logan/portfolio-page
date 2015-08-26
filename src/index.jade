@@ -6,9 +6,35 @@ html(lang="en")
     meta(name='viewport' content="width=device-width, initial-scale=1")
 
     link(rel='stylesheet' href="lib/build.css")
-    link(rel='stylesheet' href="main.css")
+    link(rel='stylesheet' href="css/main.css")
 
     script(type='text/javascript' src='lib/build.js')
     script(type='text/javascript' src='main.js')
   body
-    p Hello World!
+    .header
+      ul
+        li
+          a(href="https://github.com/james-logan")
+            span
+              img(src="assets/GitHub-Mark-32px.png")
+            |   Github
+        li
+          a(href="https://github.com/james-logan")
+            span
+              img(src="assets/34 Envelope.svg")
+            |   Email
+        li
+          a(href="https://www.linkedin.com/profile/view?id=AAIAABNQCuEB88HIRZ9zgKasi2phor2i7VOawow&trk=nav_responsive_tab_profile")
+            span
+              img(src="assets/In-Black-34px-R.png")
+            |   LinkedIn
+    .picture_box.float_l
+      img(src="assets/Photo on 8-16-15 at 1.57 PM (1).jpg")
+    .about_me_box.float_l
+    .footer
+      ul
+        li About me
+        li Projects
+        li Skills
+        li Experience
+
