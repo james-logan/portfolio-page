@@ -5,11 +5,13 @@ html(lang="en")
     title JL Portfolio
     meta(name='viewport' content="width=device-width, initial-scale=1")
 
+    link(href='http://fonts.googleapis.com/css?family=Julius+Sans+One|Electrolize|Michroma|Cinzel+Decorative:400,700|Megrim|Baumans|UnifrakturCook:700' rel='stylesheet' type='text/css')
     link(rel='stylesheet' href="lib/build.css")
     link(rel='stylesheet' href="css/main.css")
 
     script(type='text/javascript' src='lib/build.js')
     script(type='text/javascript' src='main.js')
+
   body
     .header
       ul
@@ -28,18 +30,74 @@ html(lang="en")
             span
               img(src="assets/In-Black-34px-R.png")
             |   LinkedIn
-        li
+        li.name
             |   James Logan
-    .picture_box.float_l
-      img(src="assets/hawkecosplay.jpg")
-    .about_me_box.float_l
-      h1 About me
-      p Interesting things to interest people and get me a job. Interesting things to interest people and get me a job.Interesting things to interest people and get me a jobInteresting things to interest people and get me a jobInteresting things to interest people and get me a jobInteresting things to interest people and get me a jobInteresting things to interest people and get me a jobInteresting things to interest people and get me a jobInteresting things to interest people and get me a job
+    .container
+      .grand_title.float_l
+        hr
+        h1 James Barrett Logan
+        hr(noshade)
+        h2 Software Developer
+      .picture_box.float_l.next
+        img(src="assets/hawkecosplay.jpg")
+      .about_me_box.float_l
+        h1 About me
+        p Interesting things to interest people and get me a job. Interesting things to interest people and get me a job.Interesting things to interest people and get me a jobInteresting things to interest people and get me a jobInteresting things to interest people and get me a jobInteresting things to interest people and get me a jobInteresting things to interest people and get me a jobInteresting things to interest people and get me a jobInteresting things to interest people and get me a job
+      .projects.float_l.next
+        .index.float_l
+          ul
+            li.subsection Full Sites
+            li Compendium
+            li Nashviva
+            li SnackTN
+            li.subsection Small Projects
+            li Black Jack
+            li Stock App
+            li Whack-a-mole
+        .project_holder.float_l
+          .project.float_l
+            img.screencap(src="assets/compendium.png")
+            div
+              h1 Compendium
+              p Description is for things Description is for things Description is for things Description is for things Description is for things Descript
+              a(href="") github
+              a(href="") website
+          .project.float_l
+            img.screencap(src="assets/compendium.png")
+            div
+              h1 Compendium
+              p Description is for things Description is for things Description is for things Description is for things Description is for things Descript
+              a(href="") github
+              a(href="") website
+          .project.float_l
+            img.screencap(src="assets/compendium.png")
+            div
+              h1 Compendium
+              p Description is for things Description is for things Description is for things Description is for things Description is for things Descript
+              a(href="") github
+              a(href="") website
+          .project.float_l
+            img.screencap(src="assets/compendium.png")
+            div
+              h1 Compendium
+              p Description is for things Description is for things Description is for things Description is for things Description is for things Descript
+              a(href="") github
+              a(href="") website
+
+
     .right_arrow
+      img(src="assets/26 Forward.svg")
     .footer
-      ul
-        li About me
-        li Projects
-        li Skills
-        li Experience
+      div
+        ul
+          li
+            .tab Welcome
+          li
+            .tab About me
+          li
+            .tab Projects
+          li
+            .tab Skills
+          li
+            .tab Experience
 
