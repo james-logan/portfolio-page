@@ -1,18 +1,14 @@
-html(lang="en")
+html(lang="en" ng-app="portfolio")
   head
     meta(charset="utf-8")
     meta(http-equiv="x-ua-compatible" content="ie=edge")
     title JL Portfolio
     meta(name='viewport' content="width=device-width, initial-scale=1")
 
-    link(href='http://fonts.googleapis.com/css?family=Julius+Sans+One|Electrolize|Michroma|Cinzel+Decorative:400,700|Megrim|Baumans|UnifrakturCook:700' rel='stylesheet' type='text/css')
-    link(rel='stylesheet' href="lib/build.css")
+    link(href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css')
     link(rel='stylesheet' href="css/main.css")
 
-    script(type='text/javascript' src='lib/build.js')
-    script(type='text/javascript' src='main.js')
-
-  body
+  body(ng-controller="Main as main")
     .header
       ul
         li
@@ -32,72 +28,130 @@ html(lang="en")
             |   LinkedIn
         li.name
             |   James Logan
-    .container
-      .grand_title.float_l
-        hr
-        h1 James Barrett Logan
+    .contain
+      .grand_title
+        //- hr
+        .name
+          h1 James Barrett Logan
         hr(noshade)
-        h2 Software Developer
-      .picture_box.float_l.next
-        img(src="assets/hawkecosplay.jpg")
-      .about_me_box.float_l
-        h1 About me
-        p Interesting things to interest people and get me a job. Interesting things to interest people and get me a job.Interesting things to interest people and get me a jobInteresting things to interest people and get me a jobInteresting things to interest people and get me a jobInteresting things to interest people and get me a jobInteresting things to interest people and get me a jobInteresting things to interest people and get me a jobInteresting things to interest people and get me a job
-      .projects.float_l.next
-        .index.float_l
-          ul
-            li.subsection Full Sites
-            li Compendium
-            li Nashviva
-            li SnackTN
-            li.subsection Small Projects
-            li Black Jack
-            li Stock App
-            li Whack-a-mole
-        .project_holder.float_l
-          .project.float_l
-            img.screencap(src="assets/compendium.png")
-            div
-              h1 Compendium
-              p Description is for things Description is for things Description is for things Description is for things Description is for things Descript
-              a(href="") github
-              a(href="") website
-          .project.float_l
-            img.screencap(src="assets/compendium.png")
-            div
-              h1 Compendium
-              p Description is for things Description is for things Description is for things Description is for things Description is for things Descript
-              a(href="") github
-              a(href="") website
-          .project.float_l
-            img.screencap(src="assets/compendium.png")
-            div
-              h1 Compendium
-              p Description is for things Description is for things Description is for things Description is for things Description is for things Descript
-              a(href="") github
-              a(href="") website
-          .project.float_l
-            img.screencap(src="assets/compendium.png")
-            div
-              h1 Compendium
-              p Description is for things Description is for things Description is for things Description is for things Description is for things Descript
-              a(href="") github
-              a(href="") website
+        .title_box
+          ul.titles
+            li(ng-repeat="qual in main.qualities")
+              h2 {{qual}}
+        .filter
+          h2 Filter
+          .open
+            img(src="assets/26 Forward.svg")
+        .filter_categories
+          form
+            input(type="checkbox" value="animal related")
+            label Animal Related
+            input(type="checkbox" value="animal related")
+            label Hobbies
+            input(type="checkbox" value="animal related")
+            label Stuff that Probably Matters to You
 
 
-    .right_arrow
-      img(src="assets/26 Forward.svg")
-    .footer
-      div
+      .nav(ng-show="main.menu")
+        .letter(ng-click="main.scroll('top')" ng-mouseover="main.nav.welcome = true" ng-mouseleave="main.nav.welcome = false") W
+        .letter(ng-click="main.scroll('project')" ng-mouseover="main.nav.project = true" ng-mouseleave="main.nav.project = false") P
+        .letter(ng-click="main.scroll('skills')" ng-mouseover="main.nav.skills = true" ng-mouseleave="main.nav.skills = false") S
+        .letter(ng-click="main.scroll('about')" ng-mouseover="main.nav.about = true" ng-mouseleave="main.nav.about = false") A
+      .nav_ext
+        .word
+          p(ng-show="main.nav.welcome") elcome
+        .word
+          p(ng-show="main.nav.project") rojects
+        .word
+          p(ng-show="main.nav.skills") kills & Tools
+        .word
+          p(ng-show="main.nav.about") bout Me
+
+      .break_box
+      .project_button
+        .left_triangle
+        .rocket
+          img(src="assets/rocket16.png")
+        .right_triangle
+      .project_title
+        h1 Screw This. Take Me To The Projects
+      .hr_holder
+        hr
+        hr
+        hr
+        .half_moon(ng-click="main.scroll('project')")
+          img(src="assets/downarrow.png")
+      .project_container
+        .project
+          .description
+            h2 Compendium
+            p A web-app that allows you to track your progress through books and record the date when you complete them to display on your profile timeline. Geared toward science fiction, the site rewards you with experience points for generating thoughtful and specific book tags.
+            a(href="https://github.com/james-logan/thematica") Repo |
+            a(href="https://github.com/james-logan/thematica")  Site
+          img.screencap(src="assets/compendium.png")
+        .project
+          .description
+            h2 Compendium
+            p A web-app that allows you to track your progress through books and record the date when you complete them to display on your profile timeline. Geared toward science fiction, the site rewards you with experience points for generating thoughtful and specific book tags.
+            a(href="https://github.com/james-logan/thematica") Repo |
+            a(href="https://github.com/james-logan/thematica")  Site
+          img.screencap(src="assets/compendium.png")
+        .project
+          .description
+            h2 Compendium
+            p A web-app that allows you to track your progress through books and record the date when you complete them to display on your profile timeline. Geared toward science fiction, the site rewards you with experience points for generating thoughtful and specific book tags.
+            a(href="https://github.com/james-logan/thematica") Repo |
+            a(href="https://github.com/james-logan/thematica")  Site
+          img.screencap(src="assets/compendium.png")
+        .project
+          .description
+            h2 Compendium
+            p A web-app that allows you to track your progress through books and record the date when you complete them to display on your profile timeline. Geared toward science fiction, the site rewards you with experience points for generating thoughtful and specific book tags.
+            a(href="https://github.com/james-logan/thematica") Repo |
+            a(href="https://github.com/james-logan/thematica")  Site
+          img.screencap(src="assets/compendium.png")
+        .project
+          .description
+            h2 Compendium
+            p A web-app that allows you to track your progress through books and record the date when you complete them to display on your profile timeline. Geared toward science fiction, the site rewards you with experience points for generating thoughtful and specific book tags.
+            a(href="https://github.com/james-logan/thematica") Repo |
+            a(href="https://github.com/james-logan/thematica")  Site
+          img.screencap(src="assets/compendium.png")
+      .top
+        .top_left
+        .top_right
+      .skills_block
+        .small_title
+          h1 Tools and Skills
         ul
-          li
-            .tab Welcome
-          li
-            .tab About me
-          li
-            .tab Projects
-          li
-            .tab Skills
-          li
-            .tab Experience
+          li Javascript
+          li jQuery
+          li Angular.js
+          li GIT/GitHub
+          li Jade/Sass
+          li Bootstrap/Skeleton
+          li Grunt/Gulp
+          li Node.js
+          li MongoDB
+          li Firebase
+          li Test Driven Development
+          li Ionic
+      .bottom
+        .bottom_left
+        .bottom_right
+      .about_block
+        .picture_box.float_l.next
+          //- img(src="assets/hawkecosplay.jpg")
+        .about_me_box.float_l
+          h1 About me
+          p Hey! Thanks for checking out my page. Hope you like it. I'm a middle Tennessee native who got into software development in late 2014. I'm a recent graduate of the Nashville Software School, and... well... all of this boring info is covered in either my LinkedIn or GitHub. What you need to know about me is that I like to make things. Things that are both visually compelling and useful.
+
+          p Thanks again for stopping by. Shoot me an email if you're interested in working with me!
+
+          p -James
+        .picture_box.float_l.two
+      .footer
+        div Spaceship icon made by <a href="http://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0"> CC BY 3.0</a>
+      script(type='text/javascript' src='lib/build.js')
+      script(type='text/javascript' src='js/main.js')
 
