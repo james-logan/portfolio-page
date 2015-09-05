@@ -99,7 +99,7 @@ angular
 
     vm.index = {
       top: 0,
-      project: 550,
+      project: 500,
       skills: 1740,
       about: 2300
     }
@@ -113,27 +113,71 @@ angular
     var $win = $($window);
 
     $win.on('scroll', function () {
-      if ($win.scrollTop() > 520) {
-        if (vm.menu !== false)
-          return;
-        vm.menu = true;
-        $scope.$apply();
-      } else {
-        if (vm.menu !== true)
-          return;
-        vm.menu = false;
-        $scope.$apply();
-      }
+      vm.fade('in', '.nav', $win.scrollTop(), 400, 520);
+      vm.fade('out', '.hr_holder', $win.scrollTop(), 400, 520);
+      vm.drop($(".project_title"), $('.project_button'), $win.scrollTop(), 350, 470, 160)
+      vm.lastY = $win.scrollTop();
     });
+    vm.lastDirection = 'up'
+
+    vm.fade = function (direction, object, current, start, end) {
+      var value =(current-start)/(end-start);
+      value *= (direction==='in') ? 1:-1;
+      $(object).css('opacity', value)
+    }
+    vm.drop = function (object, object2, current, start, end, distance) {
+      if (start < current && vm.lastY < current && vm.lastDirection === 'up') {
+        vm.lastDirection = 'down'
+        console.log('going down')
+        var options1
+        var options = options1 = {
+          "margin-top": "160px",
+          "margin-bottom": "-160px",
+          "background-color" : "transparent"
+        }
+        var options2 = {
+          opacity: 0
+        }
+
+        var options3 = {
+          "margin-left": "-1500px",
+          "margin-right": "0px",
+          "color": "rgb(251,126,41)"
+        }
+        // $('.hr_holder').animate(options2, 800)
+      } else if (vm.lastY > current && current < end && vm.lastDirection === 'down') {
+        vm.lastDirection = 'up';
+        console.log('going uip');
+        var options = {
+          "margin-top": "0px",
+          "margin-bottom": "0px",
+          "background-color" : "rgb(251,126,41)"
+        }
+        var options1 = {
+          "margin-top": "0px",
+          "margin-bottom": "0px",
+        }
+        var options2 = {
+          opacity: 1
+        }
+        var options3 = {
+          "margin-left": "10px",
+          "color": "black"
+        }
+      }
+
+      object.animate(options, 800)
+      object2.animate(options1, 800)
+      $(object.children('h1:first-child')[0]).animate(options2, 800)
+      $(object.children('h1:last-child')[0]).animate(options3, 800)
+    }
 
     vm.scroll = function (string) {
       // window.scrollBy(0, 500);
-      $.smoothScroll(vm.index[string])
+      $.smoothScroll({speed: 2000}, vm.index[string])
     }
 
-    vm.yCheck = function () {
-      return $('bod').scrollTop()
-    }
+    //code for filter
 
     vm.check;
 

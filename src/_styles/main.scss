@@ -22,7 +22,9 @@
 
 // }
 
-
+.nav {
+  opacity: 0;
+}
 
 * {
   font-family: "Abel";
@@ -181,6 +183,7 @@ div {
   margin-left: 5px;
   margin-top: -1px;
   h2 {
+    // display: inline;
     color: black;
     font-size: 40px;
     margin: 1px;
@@ -223,6 +226,13 @@ div {
     // animation-name: border_pulse;
     animation-duration: 4s;
     animation-iteration-count: infinite;
+  }
+}
+
+.project_title {
+  margin-bottom: 0;
+  h1 {
+    display: inline;
   }
 }
 

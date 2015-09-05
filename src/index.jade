@@ -37,22 +37,22 @@ html(lang="en" ng-app="portfolio")
         .title_box
           ul.titles
             li(ng-repeat="qual in main.qualities")
-              h2(class="{{qual.cat}}") {{qual.name}}  |
+              h2(class="{{qual.cat}}"){{qual.name}}
         .filter
           h2 Filter
           .open
             img(src="assets/26 Forward.svg")
         .filter_categories
           form
-            input.anim(type="radio" value="animal" ng-model="main.check" ng-change="main.color()")
+            input(type="radio" value="animal" ng-model="main.check" ng-change="main.color()")
             label Animal Related
-            input.hob(type="radio" value="hobbies" ng-model="main.check" ng-change="main.color()")
+            input(type="radio" value="hobbies" ng-model="main.check" ng-change="main.color()")
             label Hobbies
-            input.car(type="radio" value="care" ng-model="main.check" ng-change="main.color()")
+            input(type="radio" value="care" ng-model="main.check" ng-change="main.color()")
             label Stuff that Probably Matters to You
 
-
-      .nav(ng-show="main.menu")
+            //- ng-show="main.menu"
+      .nav()
         .letter(ng-click="main.scroll('top')" ng-mouseover="main.nav.welcome = true" ng-mouseleave="main.nav.welcome = false") W
         .letter(ng-click="main.scroll('project')" ng-mouseover="main.nav.project = true" ng-mouseleave="main.nav.project = false") P
         .letter(ng-click="main.scroll('skills')" ng-mouseover="main.nav.skills = true" ng-mouseleave="main.nav.skills = false") S
@@ -73,8 +73,9 @@ html(lang="en" ng-app="portfolio")
         .rocket
           img(src="assets/rocket16.png")
         .right_triangle
-      .project_title
-        h1 Screw This. Take Me To The Projects
+      .project_title(style="margin-top: {{main.mt}}px; margin-bottom: {{main.mb}}px;")
+        h1 Screw This. Take Me To The
+        h1(style="margin-left: 10px;") Projects
       .hr_holder
         hr
         hr
@@ -144,7 +145,9 @@ html(lang="en" ng-app="portfolio")
           //- img(src="assets/hawkecosplay.jpg")
         .about_me_box.float_l
           h1 About me
-          p Hey! Thanks for checking out my page. Hope you like it. I'm a middle Tennessee native who got into software development in late 2014. I'm a recent graduate of the Nashville Software School, and... well... all of this boring info is covered in either my LinkedIn or GitHub. What you need to know about me is that I like to make things. Things that are both visually compelling and useful.
+          p Hey! Thanks for checking out my page. Hope you like it. I'm a middle Tennessee native who got into software development in late 2014. I'm a recent graduate of the Nashville Software School, and... well... all of this boring info is covered in either my LinkedIn or GitHub.
+
+          p What you need to know about me is that I like to make things. Things that are both visually compelling and useful.
 
           p Thanks again for stopping by. Shoot me an email if you're interested in working with me!
 

@@ -19,6 +19,7 @@
     "angular-route": "~1.4.1",
     "chosen": "~1.4.2",
     "firebase": "~2.2.7",
+    "jquery-color": "~2.1.2",
     "jquery-smooth-scroll": "~1.5.5"
   }
 }
