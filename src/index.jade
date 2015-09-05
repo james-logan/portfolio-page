@@ -37,18 +37,18 @@ html(lang="en" ng-app="portfolio")
         .title_box
           ul.titles
             li(ng-repeat="qual in main.qualities")
-              h2 {{qual}}
+              h2(class="{{qual.cat}}") {{qual.name}}  |
         .filter
           h2 Filter
           .open
             img(src="assets/26 Forward.svg")
         .filter_categories
           form
-            input(type="checkbox" value="animal related")
+            input.anim(type="radio" value="animal" ng-model="main.check" ng-change="main.color()")
             label Animal Related
-            input(type="checkbox" value="animal related")
+            input.hob(type="radio" value="hobbies" ng-model="main.check" ng-change="main.color()")
             label Hobbies
-            input(type="checkbox" value="animal related")
+            input.car(type="radio" value="care" ng-model="main.check" ng-change="main.color()")
             label Stuff that Probably Matters to You
 
 

@@ -13,27 +13,83 @@ angular
     var vm = this;
 
     vm.qualities = [
-      "Frustrated Writer",
-      "Awesome Software Developer",
-      "Casual Bug Photographer",
-      "Cat Savior",
-      "Weightlifting Noob",
-      "Recovering Netflix-aholic",
-      "Gamer Without a Rig",
-      "Apprentice Costume Crafter",
-      "Dog Snuggler",
-      "Sf Nerd",
-      "Reformed Bio-major",
-      "Sleep Enthusiast",
-      "Caffeine Powered",
-      "Devilishly Handsome",
-      "Food Eater",
-      "Lego Engineer",
-      "Amateur Beardsman",
-      "Microwave Chef",
-      "Tennessee Native",
-      "Book Reader",
-      "Tom-fooler"
+      {
+        name: "Frustrated Writer",
+        cat: "hobbies"
+      },
+      {
+        name: "Awesome Software Developer",
+        cat: "care"
+      },
+      {
+        name: "Casual Bug Photographer",
+        cat: "animal"
+      },
+      {
+        name:"Weightlifting Noob",
+        cat: "hobbies"
+      },
+      {
+        name:"Recovering Netflix-aholic",
+        cat: "hobbies"
+      },
+      {
+        name:"Dog Snuggler",
+        cat: "animal"
+      },
+      {
+        name:"Gamer Without a Rig",
+        cat: "hobbies"
+      },
+      {
+        name:"Apprentice Costume Crafter",
+        cat: "hobbies"
+      },
+      {
+        name:"Sf Nerd",
+        cat: "hobbies"
+      },
+      {
+        name:"Reformed Bio-major",
+        cat: "hobbies"
+      },
+      {
+        name:"Sleep Enthusiast",
+        cat: "hobbies"
+      },{
+        name:"Caffeine Powered",
+        cat: "hobbies"
+      },
+      {
+        name:"Devilishly Handsome",
+        cat: "care"
+      },
+      {
+        name:"Food Eater",
+        cat: "hobbies"
+      },{
+        name:"Lego Engineer",
+        cat: "hobbies"
+      },
+      {
+        name:"Amateur Beardsman",
+        cat: "hobbies"
+      },
+      {
+        name:"Microwave Chef",
+        cat: "hobbies"
+      },{
+        name:"Tennessee Native",
+        cat: "hobbies"
+      },
+      {
+        name:"Cat Savior",
+        cat: "animal"
+      },
+      {
+        name:"Book Reader",
+        cat: "hobbies"
+      }
     ]
 
     vm.jump = function () {
@@ -68,7 +124,6 @@ angular
         vm.menu = false;
         $scope.$apply();
       }
-
     });
 
     vm.scroll = function (string) {
@@ -80,5 +135,11 @@ angular
       return $('bod').scrollTop()
     }
 
-  })
+    vm.check;
 
+    vm.color = function () {
+      $('ul.titles li h2').addClass('black');
+      $('.' + vm.check).removeClass('black');
+    }
+
+  })

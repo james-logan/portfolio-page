@@ -107,7 +107,7 @@ div {
   }
 }
 .nav_ext {
-  width: 500px;
+  width: 150px;
   height: 160px;
   position: fixed;
   left: 50px;
@@ -499,4 +499,8 @@ a{
   height: 40px;
   padding: 10px;
   text-align: center;
+}
+
+.black {
+  color: black !important;
 }
