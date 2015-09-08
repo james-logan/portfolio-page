@@ -114,8 +114,8 @@ angular
 
     $win.on('scroll', function () {
       vm.fade('in', '.nav', $win.scrollTop(), 400, 520);
-      vm.fade('out', '.hr_holder', $win.scrollTop(), 400, 520);
-      vm.drop($(".project_title"), $('.project_button'), $win.scrollTop(), 350, 470, 160)
+      // vm.fade('out', '.hr_holder', $win.scrollTop(), 400, 520);
+      vm.drop($(".project_title"), $('.project_button'), $('.hr_holder'), $win.scrollTop(), 350, 470, 160)
       vm.lastY = $win.scrollTop();
     });
     vm.lastDirection = 'up'
@@ -125,7 +125,7 @@ angular
       value *= (direction==='in') ? 1:-1;
       $(object).css('opacity', value)
     }
-    vm.drop = function (object, object2, current, start, end, distance) {
+    vm.drop = function (object, object2, object3, current, start, end, distance) {
       if (start < current && vm.lastY < current && vm.lastDirection === 'up') {
         vm.lastDirection = 'down'
         console.log('going down')
@@ -143,6 +143,13 @@ angular
           "margin-left": "-1500px",
           "margin-right": "0px",
           "color": "rgb(251,126,41)"
+        }
+
+        var options4 = {
+          "z-index": "-10",
+          "margin-left": "0px",
+          "margin-top": "230px",
+          "margin-bottom": "-230px"
         }
         // $('.hr_holder').animate(options2, 800)
       } else if (vm.lastY > current && current < end && vm.lastDirection === 'down') {
@@ -164,10 +171,19 @@ angular
           "margin-left": "10px",
           "color": "black"
         }
+        var options4 = {
+          "z-index": "0",
+          "margin-top": "0px",
+          "margin-bottom": "0px",
+          "margin-left": "194px",
+        }
       }
 
-      object.animate(options, 800)
-      object2.animate(options1, 800)
+      object.animate(options, 1000)
+      object2.animate(options4, 1000)
+      object3.animate(options2, 600)
+      $('.project_button .left_triangle').animate(options2, 600);
+      // $('.project_button .rocket').animate()
       $(object.children('h1:first-child')[0]).animate(options2, 800)
       $(object.children('h1:last-child')[0]).animate(options3, 800)
     }
