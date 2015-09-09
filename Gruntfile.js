@@ -16,6 +16,12 @@ var randomPort = getRandomInt(3000, 65536);
         src: 'public/css/main.css'
       }
     },
+    'gh-pages': {
+        options: {
+          base: 'public'
+        },
+        src: '**/*'
+    },
     babel: {
       dev: {
         options: {
