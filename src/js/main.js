@@ -100,7 +100,7 @@ angular
     vm.index = {
       top: 0,
       project: 500,
-      skills: 1740,
+      skills: 1300,
       about: 2300
     }
 
@@ -216,6 +216,29 @@ angular
 
     vm.sendEmail = function () {
       //do stuff with mandrill
+      vm.emailSwitch = false;
+      var api_url = "https://mandrillapp.com/api/1.0/messages/send.json";
+      var email = {
+        "key": "OXcjE1MGpHd5b7ysIQWrGg",
+        "message": {
+          "html": "<p>From your portfolio:</p>",
+          "text": vm.email.text,
+          "subject": vm.email.subject,
+          "from_email": vm.email.email,
+          "from_name": vm.email.email,
+          "to": [
+              {
+                "email": "jamesblogan20@gmail.com",
+                "name": "James Logan",
+                "type": "to"
+              }
+            ]
+          }
+      }
+
+      $.post(api_url, email, function (data) {
+        console.log(data)
+      })
     }
 
   })
