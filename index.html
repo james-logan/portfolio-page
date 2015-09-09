@@ -1,0 +1,166 @@
+
+<html lang="en" ng-app="portfolio">
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+    <title>JL Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="css/main.css"/>
+  </head>
+  <body ng-controller="Main as main">
+    <div ng-show="main.emailSwitch" class="overlay">
+      <div class="form_box">
+        <form ng-submit="main.sendEmail()">
+          <label for="email">Email</label>
+          <input type="text" placeholder="coolguy@awesome.com" name="email" ng-model="main.email.email"/>
+          <label for="subject">Subject</label>
+          <input type="text" placeholder="ONCE IN A LIFETIME OPPORTUNITY..." name="email" ng-model="main.email.subject"/>
+          <label for="message">Message</label>
+          <textarea placeholder="Hello, mr. Logan. I'm writing to let you knew that your are the heir to the sizeable fortune of , the depose prince of Nigeria..." name="message" ng-model="main.email.text" rows="5"></textarea>
+          <input type="submit"/>
+          <button ng-click="main.emailSwitch = false" value="Close">Close</button>
+        </form>
+      </div>
+    </div>
+    <div class="header">
+      <ul>
+        <li><a href="https://github.com/james-logan"><span><img src="assets/GitHub-Mark-32px.png"/></span>  Github</a></li>
+        <li><a href="" ng-click="main.emailShow()"><span><img src="assets/34 Envelope.svg"/></span>  Email</a></li>
+        <li><a href="https://www.linkedin.com/profile/view?id=AAIAABNQCuEB88HIRZ9zgKasi2phor2i7VOawow&amp;trk=nav_responsive_tab_profile"><span><img src="assets/In-Black-34px-R.png"/></span>  LinkedIn</a></li>
+        <li class="name">  James Logan</li>
+      </ul>
+    </div>
+    <div class="contain">
+      <div class="grand_title">
+        <div class="name">
+          <h1>James Barrett Logan</h1>
+        </div>
+        <hr noshade="noshade"/>
+        <div class="title_box">
+          <ul class="titles">
+            <li ng-repeat="qual in main.qualities">
+              <h2 class="{{qual.cat}}">{{qual.name}}</h2>
+            </li>
+          </ul>
+        </div>
+        <div class="filter">
+          <h2>Filter</h2>
+          <div class="open"><img src="assets/26 Forward.svg"/></div>
+        </div>
+        <div class="filter_categories">
+          <form>
+            <input type="radio" value="animal" ng-model="main.check" ng-change="main.color()"/>
+            <label>Animal Related</label>
+            <input type="radio" value="hobbies" ng-model="main.check" ng-change="main.color()"/>
+            <label>Hobbies</label>
+            <input type="radio" value="care" ng-model="main.check" ng-change="main.color()"/>
+            <label>Stuff that Probably Matters to You</label>
+          </form>
+        </div>
+      </div>
+      <div class="nav">
+        <div ng-click="main.scroll('top')" ng-mouseover="main.nav.welcome = true" ng-mouseleave="main.nav.welcome = false" class="letter">W</div>
+        <div ng-click="main.scroll('project')" ng-mouseover="main.nav.project = true" ng-mouseleave="main.nav.project = false" class="letter">P</div>
+        <div ng-click="main.scroll('skills')" ng-mouseover="main.nav.skills = true" ng-mouseleave="main.nav.skills = false" class="letter">S</div>
+        <div ng-click="main.scroll('about')" ng-mouseover="main.nav.about = true" ng-mouseleave="main.nav.about = false" class="letter">A</div>
+      </div>
+      <div class="nav_ext">
+        <div class="word">
+          <p ng-show="main.nav.welcome">elcome</p>
+        </div>
+        <div class="word">
+          <p ng-show="main.nav.project">rojects</p>
+        </div>
+        <div class="word">
+          <p ng-show="main.nav.skills">kills & Tools</p>
+        </div>
+        <div class="word">
+          <p ng-show="main.nav.about">bout Me</p>
+        </div>
+      </div>
+      <div class="break_box"></div>
+      <div class="project_button">
+        <div class="left_triangle"></div>
+        <div class="rocket"><img src="assets/rocket16.png"/></div>
+        <div class="right_triangle"></div>
+      </div>
+      <div style="margin-top: {{main.mt}}px; margin-bottom: {{main.mb}}px;" class="project_title">
+        <h1>Screw This. Take Me To The</h1>
+        <h1 style="margin-left: 10px;">Projects</h1>
+      </div>
+      <div class="hr_holder">
+        <hr/>
+        <hr/>
+        <hr/>
+        <div ng-click="main.scroll('project')" class="half_moon"><img src="assets/downarrow.png"/></div>
+      </div>
+      <div class="project_container">
+        <div class="project">
+          <div class="description">
+            <h2>Compendium</h2>
+            <p>A web-app that allows you to track your progress through books and record the date when you complete them to display on your profile timeline. Geared toward science fiction, the site rewards you with experience points for generating thoughtful and specific book tags.</p><a href="https://github.com/james-logan/thematica">Repo |</a><a href="http://scificompendium.com/"> Site</a>
+          </div><img src="assets/compendium.png" class="screencap"/>
+        </div>
+        <div class="project">
+          <div class="description">
+            <h2>Space Blackjack</h2>
+            <p>A blackjack game in your browser... in space! Revolutionary! Made using jQuery and the stellar <a href="http://deckofcardsapi.com/">Deck of Cards API</a>. Also experiments with some neat CSS effects. Follows the rudimentary rules for standard blackjack.</p><a href="https://github.com/james-logan/space_blackjack">Repo |</a><a href="http://james-logan.github.io/space_blackjack/"> Site</a>
+          </div><img src="assets/blackjack.png" class="screencap"/>
+        </div>
+        <div class="project">
+          <div class="description">
+            <h2>Hack-a-mole</h2>
+            <p>Prove you are a true master hacker with this terminal themed whack-a-mole browser game! The mole speed increases the higher your score goes. Made using only html, css, and vanilla Javascript.</p><a href="https://github.com/james-logan/whackamole">Repo |</a><a href="http://james-logan.github.io/whackamole/"> Site</a>
+          </div><img src="assets/Hackamole.png" class="screencap"/>
+        </div>
+      </div>
+      <div class="top">
+        <div class="top_left"></div>
+        <div class="top_right"></div>
+      </div>
+      <div class="skills_block">
+        <div class="small_title">
+          <h1>Tools and Skills</h1>
+        </div>
+        <ul>
+          <li>Javascript</li>
+          <li>jQuery</li>
+          <li>Angular.js</li>
+          <li>GIT/GitHub</li>
+          <li>Jade/Sass</li>
+          <li>Bootstrap/Skeleton</li>
+          <li>Grunt/Gulp</li>
+          <li>Node.js</li>
+          <li>Express.js</li>
+          <li>MongoDB</li>
+          <li>Firebase</li>
+          <li>Mocha/Chai</li>
+          <li>Test Driven Development</li>
+          <li>Ionic</li>
+        </ul>
+      </div>
+      <div class="bottom">
+        <div class="bottom_left"></div>
+        <div class="bottom_right"></div>
+      </div>
+      <div class="about_block">
+        <div class="picture_box float_l next">
+        </div>
+        <div class="about_me_box float_l">
+          <h1>About me</h1>
+          <p>Hey! Thanks for checking out my page. Hope you like it. I'm a middle Tennessee native who got into software development in late 2014. I'm a recent graduate of the Nashville Software School, and... well... all of this boring info is covered in either my LinkedIn or GitHub.</p>
+          <p>What you need to know about me is that I like to make things. Things that are both visually compelling and useful.</p>
+          <p>Thanks again for stopping by. Shoot me an email if you're interested in working with me!</p>
+          <p>-James</p>
+        </div>
+        <div class="picture_box float_l two"></div>
+      </div>
+      <div class="footer">
+        <div>Spaceship icon made by <a href="http://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0"> CC BY 3.0</a></div>
+      </div>
+      <script type="text/javascript" src="lib/build.js"></script>
+      <script type="text/javascript" src="js/main.js"></script>
+    </div>
+  </body>
+</html>
