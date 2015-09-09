@@ -9,7 +9,7 @@ html(lang="en" ng-app="portfolio")
     link(rel='stylesheet' href="css/main.css")
 
   body(ng-controller="Main as main")
-    .overlay(ng-show="vm.emailSwitch")
+    .overlay(ng-show="main.emailSwitch")
         .form_box
           form(ng-submit="main.sendEmail()")
             label(for="email") Email
@@ -17,8 +17,9 @@ html(lang="en" ng-app="portfolio")
             label(for="subject") Subject
             input(type="text" placeholder="ONCE IN A LIFETIME OPPORTUNITY..." name="email" ng-model="main.email.subject")
             label(for="message") Message
-            textarea(placeholder="Hello, mr. Logan. I'm writing to let you knew that your are the heir to the sizeable fortune of , the depose prince of Nigeria..." name="message" ng-model="main.email.text" rows="10")
+            textarea(placeholder="Hello, mr. Logan. I'm writing to let you knew that your are the heir to the sizeable fortune of , the depose prince of Nigeria..." name="message" ng-model="main.email.text" rows="5")
             input(type="submit")
+            button(ng-click="main.emailSwitch = false" value="Close") Close
     .header
       ul
         li
@@ -27,7 +28,7 @@ html(lang="en" ng-app="portfolio")
               img(src="assets/GitHub-Mark-32px.png")
             |   Github
         li
-          a(href="https://github.com/james-logan")
+          a(href="" ng-click="main.emailShow()")
             span
               img(src="assets/34 Envelope.svg")
             |   Email
@@ -60,7 +61,6 @@ html(lang="en" ng-app="portfolio")
             label Hobbies
             input(type="radio" value="care" ng-model="main.check" ng-change="main.color()")
             label Stuff that Probably Matters to You
-
             //- ng-show="main.menu"
       .nav()
         .letter(ng-click="main.scroll('top')" ng-mouseover="main.nav.welcome = true" ng-mouseleave="main.nav.welcome = false") W
