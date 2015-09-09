@@ -9,6 +9,16 @@ html(lang="en" ng-app="portfolio")
     link(rel='stylesheet' href="css/main.css")
 
   body(ng-controller="Main as main")
+    .overlay(ng-show="vm.emailSwitch")
+        .form_box
+          form(ng-submit="main.sendEmail()")
+            label(for="email") Email
+            input(type="text" placeholder="coolguy@awesome.com" name="email" ng-model="main.email.email")
+            label(for="subject") Subject
+            input(type="text" placeholder="ONCE IN A LIFETIME OPPORTUNITY..." name="email" ng-model="main.email.subject")
+            label(for="message") Message
+            textarea(placeholder="Hello, mr. Logan. I'm writing to let you knew that your are the heir to the sizeable fortune of , the depose prince of Nigeria..." name="message" ng-model="main.email.text" rows="10")
+            input(type="submit")
     .header
       ul
         li

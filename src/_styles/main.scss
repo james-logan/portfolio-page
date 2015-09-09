@@ -1,3 +1,39 @@
+.overlay {
+  background-color: rgba(0,0,0,.5);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2000;
+}
+
+.form_box {
+  background-color: rgb(54,50,50);
+  width: 400px;
+  height: 500px;
+  margin: auto;
+  margin-top: 200px;
+  padding: 15px;
+  label, input {
+    display: block;
+    font-size: 25px;
+  }
+  input, textarea {
+    padding: 5px;
+    font-size: 25px;
+    background-color: rgb(104,100,100);
+    border: none;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+
+
+
+
+
+
+
 .nav {
   opacity: 0;
 }

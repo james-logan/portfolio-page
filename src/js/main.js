@@ -197,9 +197,21 @@ angular
 
     vm.check;
 
+    vm.emailSwitch = false;
+
     vm.color = function () {
       $('ul.titles li h2').addClass('black');
       $('.' + vm.check).removeClass('black');
+    }
+
+    vm.email = {
+      email: "",
+      subject: "",
+      text: ""
+    }
+
+    vm.sendEmail = function () {
+      //do stuff with mandrill
     }
 
   })
