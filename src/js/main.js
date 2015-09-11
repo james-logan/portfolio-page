@@ -204,7 +204,7 @@ angular
     }
 
     vm.color = function () {
-      $('ul.titles li h2').addClass('black');
+      $('.titles h2').addClass('black');
       $('.' + vm.check).removeClass('black');
     }
 
