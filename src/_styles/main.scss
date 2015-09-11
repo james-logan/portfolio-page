@@ -45,6 +45,7 @@
 body {
   overflow-x: hidden;
   background-image: url(../assets/bg15.jpg);
+  background-attachment: fixed;
   background-size: 100% auto;
   width: 100%;
   margin: 0;
@@ -345,15 +346,41 @@ a{
 }
 
 .project {
+  // width: 1025px;
+  // height: 202px;
   width: 1025px;
-  height: 202px;
+  overflow: auto;
   background: rgb(54,50,50);
   box-sizing: border-box;
   // border: 2px solid darken(darkgray, 20%);
   border: 2px solid rgba(251,126,41, .7);
   border-bottom: none;
+  @media screen and (max-width: 1040px) {
+    width: 513px;
+    * {
+      float: none !important;
+      display: block;
+    }
+  }
+  @media screen and (max-width: 513px) {
+    width: 400px;
+    overflow: hidden;
+    a {
+      display: inline;
+    }
+    div {
+      padding: 10px;
+    }
+    div, img {
+      float: none !important;
+      display: block;
+      width: 400px !important;
+      overflow: hidden;
+    }
+  }
   &:nth-child(odd) {
     border-left: none;
+
   }
   &:nth-child(even) {
     border-right: none;
