@@ -196,11 +196,10 @@ angular
 
     //responsiveness code
     $win.on('resize load', function () {
-      console.log('wendigo')
-      console.log($win.innerWidth())
       console.log(parseInt($win.innerWidth()/17).toString())
-      $('.name h1').css('font-size', parseInt($win.innerWidth()/10).toString())
-      $('.name h1').css('line-height', parseInt($win.innerWidth()/11).toString() + "px")
+      $('.name h1').css('font-size', parseInt($win.innerWidth()/9.2).toString())
+      $('.name h1').css('line-height', parseInt($win.innerWidth()/11.5).toString() + "px")
+      $('.name h1').css('letter-spacing', "-" + parseInt($win.innerWidth()/80).toString() + "px")
     })
 
 
