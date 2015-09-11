@@ -9,7 +9,6 @@ angular
       })
   })
   .controller('Main', function ($scope, $window) {
-    console.log('kitten')
     var vm = this;
 
     vm.qualities = [
@@ -118,6 +117,9 @@ angular
       vm.drop($(".project_title"), $('.project_button'), $('.hr_holder'), $win.scrollTop(), 350, 470, 160)
       vm.lastY = $win.scrollTop();
     });
+
+
+
     vm.lastDirection = 'up'
 
     vm.fade = function (direction, object, current, start, end) {
@@ -151,7 +153,6 @@ angular
           "margin-top": "230px",
           "margin-bottom": "-230px"
         }
-        // $('.hr_holder').animate(options2, 800)
       } else if (vm.lastY > current && current < end && vm.lastDirection === 'down') {
         vm.lastDirection = 'up';
         console.log('going uip');
@@ -173,9 +174,11 @@ angular
         }
         var options4 = {
           "z-index": "0",
+          "margin": "auto",
           "margin-top": "0px",
           "margin-bottom": "0px",
-          "margin-left": "194px",
+          // "margin-left": "194px"
+          // "margin-left": "auto"
         }
       }
 
@@ -183,23 +186,31 @@ angular
       object2.animate(options4, 1000)
       object3.animate(options2, 600)
       $('.project_button .left_triangle').animate(options2, 600);
-      // $('.project_button .rocket').animate()
       $(object.children('h1:first-child')[0]).animate(options2, 800)
       $(object.children('h1:last-child')[0]).animate(options3, 800)
     }
 
     vm.scroll = function (string) {
-      // window.scrollBy(0, 500);
       $.smoothScroll({speed: 2000}, vm.index[string])
     }
 
-
+    vm.sixhundred = true;
     //responsiveness code
     $win.on('resize load', function () {
-      console.log(parseInt($win.innerWidth()/17).toString())
-      $('.name h1').css('font-size', parseInt($win.innerWidth()/9.2).toString())
-      $('.name h1').css('line-height', parseInt($win.innerWidth()/11.5).toString() + "px")
-      $('.name h1').css('letter-spacing', "-" + parseInt($win.innerWidth()/80).toString() + "px")
+      vm.sixhundred = ($win.innerWidth() >600) ? true: false;
+      var width = $win.innerWidth();
+      $('.name h1').css('font-size', parseInt(width/9.2).toString())
+      $('.name h1').css('line-height', parseInt(width/11.5).toString() + "px")
+      $('.name h1').css('letter-spacing', "-" + parseInt(width/80).toString() + "px")
+
+
+      $('.project_title h1').css('font-size', parseInt(width/18.4).toString())
+      $('.project_button .left_triangle').css('border-right-width', parseInt(width/2.7).toString() + "px")
+      $('.project_button .right_triangle').css('border-left-width', parseInt(width/2.7).toString() + "px")
+      $('.project_button .left_triangle').css('border-top-width', parseInt(width/18).toString() + "px")
+      $('.project_button .right_triangle').css('border-top-width', parseInt(width/18).toString() + "px")
+      $('.project_title h1').css('letter-spacing', "-" + parseInt(width/200).toString() + "px")
+      $scope.$apply()
     })
 
 
@@ -252,7 +263,7 @@ angular
               }
             ]
           }
-      }
+        }
 
       $.post(api_url, email, function (data) {
         console.log(data)

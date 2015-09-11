@@ -78,20 +78,23 @@ html(lang="en" ng-app="portfolio")
           p(ng-show="main.nav.about") bout Me
 
       .break_box
-      .project_button
-        .left_triangle
-        .rocket
-          img(src="assets/rocket16.png")
-        .right_triangle
-      .project_title(style="margin-top: {{main.mt}}px; margin-bottom: {{main.mb}}px;")
-        h1 Screw This. Take Me To The
-        h1(style="margin-left: 10px;") Projects
-      .hr_holder
-        hr
-        hr
-        hr
-        .half_moon(ng-click="main.scroll('project')")
-          img(src="assets/downarrow.png")
+      .banner(ng-show="main.sixhundred")
+        .project_button
+          .left_triangle
+          .rocket
+            img(src="assets/rocket16.png")
+          .right_triangle
+        .project_title(style="margin-top: {{main.mt}}px; margin-bottom: {{main.mb}}px;")
+          h1 Screw This. Take Me To The
+          h1(style="margin-left: 10px;") Projects
+        .hr_holder
+          hr
+          hr
+          hr
+          .half_moon(ng-click="main.scroll('project')")
+            img(src="assets/downarrow.png")
+      .mobile_project_title(ng-hide="main.sixhundred")
+        h1 Projects
       .project_container
         .project
           img.screencap(src="assets/compendium.png")
@@ -126,7 +129,7 @@ html(lang="en" ng-app="portfolio")
         ul
           li Javascript
           li jQuery
-          li Angular.js
+          li AngularJS
           li GIT/GitHub
           li Jade/Sass
           li Bootstrap/Skeleton

@@ -227,31 +227,25 @@ div {
   }
 }
 
-.project_button {
-  background: transparent;
-  width: 878px;
-  margin: auto;
-  float: none;
+.banner {
+  width: 100%;
   clear: both;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
+}
+
+.project_button {
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+  margin: 0px;
+  background: transparent;
   & > *, & > div > img {
     display: inline-block;
-    // animation-name: border_pulse;
-    animation-duration: 4s;
-    animation-iteration-count: infinite;
   }
-}
-
-.project_title {
-  margin-bottom: 0;
-  h1 {
-    display: inline;
-  }
-}
-
-.project_title, .hr_holder > * {
-    animation-name: glow;
-    animation-duration: 4s;
-    animation-iteration-count: infinite;
 }
 
 .left_triangle {
@@ -260,7 +254,8 @@ div {
   background: transparent;
   border-top: 60px solid transparent;
   border-right:400px solid rgb(251,126,41);
-  margin-top: 90px;
+  margin: 0px;
+  margin-top: 50px;
 
 }
 
@@ -270,17 +265,71 @@ div {
   background: transparent;
   border-top: 60px solid transparent;
   border-left:400px solid rgb(251,126,41);
-  margin-top: 90px;
+  margin: 0px;
+  margin-top: 50px;
 
 }
 
 .rocket {
-  width: 70px;
-  margin-top: 90px;
+  width: 7%;
+  margin: 0px;
+
   background: transparent;
   img {
-    width: 70px;
+    width: 100%;
     margin: auto;
+  }
+}
+
+.project_title {
+  margin: 0;
+  width: 88%;
+}
+
+.project_title {
+  background: rgb(251,126,41);
+  margin-top: 5px;
+  text-align: center;
+  // width: 1055px;
+  // margin: auto;
+  h1 {
+    font-size: 65px;
+    display: inline;
+    letter-spacing: -5px;
+    margin: 10px 0;
+    color: black;
+    font-family: "Capture It";
+  }
+}
+
+.hr_holder {
+  width: 85%;
+  hr {
+    border: 0;
+    background: rgb(251,126,41);
+    height: 5px;
+  }
+  hr:nth-child(n + 2) {
+    width: 75%;
+  }
+  hr:nth-child(n + 3) {
+    width: 50%;
+  }
+}
+
+.half_moon {
+  background: rgb(251,126,41);
+  width: 40%;
+  height: 70px;
+  border-bottom-left-radius: 500px;
+  border-bottom-right-radius: 500px;
+  padding-top: 1px;
+  img {
+    display: block;
+    float: none;
+    width: 60px;
+    margin: auto;
+    margin-top: 5px;
   }
 }
 
@@ -302,62 +351,11 @@ a{
   clear: both;
 }
 
-.project_title {
-  background: rgb(251,126,41);
-  margin-top: 5px;
-
-  text-align: center;
-  float: none;
-  width: 1055px;
-  margin: auto;
-  h1 {
-    letter-spacing: -5px;
-    margin: 10px 0;
-    font-size: 65px;
-    color: black;
-    font-family: "Capture It";
-  }
-}
-
-.hr_holder {
-  width: 1020px;
-  hr {
-    border: 0;
-    background: rgb(251,126,41);
-    height: 5px;
-  }
-  hr:nth-child(n + 2) {
-    width: 75%;
-  }
-  hr:nth-child(n + 3) {
-    width: 50%;
-  }
-}
-
-.half_moon {
-  background: rgb(251,126,41);
-  width: 200px;
-  height: 70px;
-  border-bottom-left-radius: 500px;
-  border-bottom-right-radius: 500px;
-  padding-top: 1px;
-  img {
-    display: block;
-    float: none;
-    width: 60px;
-    margin: auto;
-    margin-top: 5px;
-  }
-}
-
 .project {
-  // width: 1025px;
-  // height: 202px;
   width: 1025px;
   overflow: auto;
   background: rgb(54,50,50);
   box-sizing: border-box;
-  // border: 2px solid darken(darkgray, 20%);
   border: 2px solid rgba(251,126,41, .7);
   border-bottom: none;
   @media screen and (max-width: 1040px) {
@@ -394,6 +392,15 @@ a{
     border-bottom: 2px solid rgba(251,126,41, .7);
   }
 }
+
+.mobile_project_title {
+  margin-bottom: -50px;
+  h1 {
+    font-size: 65px;
+    margin: 10 0 0 10px;
+  }
+}
+
 
 .project_container{
   padding-top: 50px;
