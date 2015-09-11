@@ -510,28 +510,59 @@ a{
 
 .about_block {
   height: 420px;
-  width: 1020px;
+  // width: 1020px;
+  width: 85%;
   margin: 100px auto 70px auto;
   padding: none;
+  // display: flex;
+  // flex-direction: row;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  // justify-content: flex-start;
+  justify-content: space-between;
+  align-items: flex-start;
+  @media screen and (max-width:550px) {
+    width: 400px;
+    .picture_box {
+      box-shadow: none;
+    }
+  }
 }
 
 .picture_box {
-  padding: 10px;
+  // padding: 10px;
   width: 230px;
-  height: 420px;
+  // height: 420px;
+  height: 100%;
+  margin: 0px;
   background-image: url('../assets/hawkecosplay.jpg');
   background-size: cover;
   box-shadow: 0 0 10px black;
   &:last-child {
     background-image: url('../assets/catandme.jpg');
+    align-self: flex-end;
+  }
+  @media screen and (max-width: 480px) {
+    width: 200px;
   }
 }
 
 .about_me_box {
-  background: transparent;
-  height: 420px;
-  width: 560px;
-  padding: 40px;
+  background: rgba(0,0,0, .5);
+  padding: 5px;
+  min-width: 350px;
+  position: absolute;
+  top: 20px;
+  left: 23%;
+  right: 23%;
+  @media screen and (max-width: 680px) {
+    left: 50%;
+    margin-left: -175px;
+  }
+  * {
+    margin-top: 5px;
+  }
   p:last-child {
     text-align: right;
   }
@@ -539,7 +570,7 @@ a{
 
 .footer {
   background: rgb(54,50,50);
-  height: 40px;
+  min-height: 40px;
   padding: 10px;
   text-align: center;
 }
