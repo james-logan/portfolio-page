@@ -77,6 +77,10 @@ div {
     list-style-type: none;
     margin-top: 5px;
 
+    @media screen and (max-width: 630px) {
+      text-align:center;
+    }
+
     li {
       display: inline;
       margin: 20px;
@@ -84,28 +88,37 @@ div {
       &:first-child {
         margin-left: 0px;
       }
-      &:last-child {
-        margin-right: 0px;
-      }
-      span > img {
-        max-width: 18px;
+      span {
+        img {
+          max-width: 18px;
+        }
+        p {
+          display: inline;
+          // @media screen and (max-width: 500px) {
+          //   display: none;
+          // }
+        }
+
       }
     }
     li.name {
       font-size: 30px;
       float: right;
       margin-top: -5px;
+      margin-right: 0px;
+      @media screen and (max-width: 630px) {
+        display: none;
+      }
     }
   }
 }
 
 .nav {
-  width: 50px;
+  width: 45px;
   position: fixed;
   left: 0;
   top: 275px;
   background: black;
-  // border: 1px solid rgb(251,126,41);
   box-shadow: 0 0 7px rgb(251,126,41);
   border-left: 0;
   z-index: 1000;
@@ -135,30 +148,19 @@ div {
 
 .grand_title {
   margin: auto;
-  // width: 100%;
   background: transparent;
   .name {
     background: rgba(0, 0, 0, .5);
-    // @media screen and (max-width: 1140px) {
-    //   width:50%;
-    //   float:left;
-    // }
   }
   h1 {
-    // width: 110%;
-    // margin: auto;
-    // margin-top: 42px;
-    // margin-bottom: 0px;
-    margin: 42px 15px 0px 15px;
+    margin: 42px 25px 0px 25px;
     letter-spacing: -8px;
-    font-size: 129px;
+    font-size: 125px;
     font-weight: 900;
     line-height: 100px;
-    @media screen and (max-width: 1270px) {
-      font-size: 100px;
-      line-height: 75px;
-      text-align: center;
-    }
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   hr {
     border: 0;
@@ -177,12 +179,10 @@ div {
   text-align: justify;
   h2 {
     display: inline;
-    // word-wrap: break-word;
     font-size: 28px;
     line-height: 30px;
     letter-spacing: -2px;
     margin: 10px 20px 10px 0px;
-    // word-spacing: -5px;
   }
 }
 
@@ -192,20 +192,16 @@ div {
   margin: 0 5px 0 5px;
   border-left: 2px solid rgb(251,126,41);
   border-right: 2px solid rgb(251,126,41);
-  // @media screen and (max-width: 1140px) {
-  //     float: left;
-  // }
 }
 
 .filter {
   background: rgb(251,126,41);
-  width: 15%;
+  // width: 15%;
   height: 40px;
   float: left;
   margin-left: 5px;
   margin-top: -1px;
   h2 {
-    // display: inline;
     color: black;
     font-size: 40px;
     margin: 0px 3px;
@@ -218,7 +214,6 @@ div {
 .filter_categories {
   padding-top: 10px;
   background: transparent;
-  overflow-x: scroll;
   *, input {
     float: left;
     margin-left: 10px;

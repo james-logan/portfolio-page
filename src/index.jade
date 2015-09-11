@@ -29,17 +29,17 @@ html(lang="en" ng-app="portfolio")
           a(href="https://github.com/james-logan")
             span
               img(src="assets/GitHub-Mark-32px.png")
-            |   Github
+              p Github
         li
           a(href="" ng-click="main.emailShow()")
             span
               img(src="assets/34 Envelope.svg")
-            |   Email
+              p Email
         li
           a(href="https://www.linkedin.com/profile/view?id=AAIAABNQCuEB88HIRZ9zgKasi2phor2i7VOawow&trk=nav_responsive_tab_profile")
             span
               img(src="assets/In-Black-34px-R.png")
-            |   LinkedIn
+              p LinkedIn
         li.name
             |   James Logan
     .contain
@@ -53,8 +53,6 @@ html(lang="en" ng-app="portfolio")
             h2(ng-repeat="qual in main.qualities" class="{{qual.cat}}"){{qual.name}}
         .filter
           h2 Filter-&gt;
-          //- .open
-          //-   img(src="assets/26 Forward.svg")
         .filter_categories
           form
             input(type="radio" value="animal" ng-model="main.check" ng-change="main.color()")

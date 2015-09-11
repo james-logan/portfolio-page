@@ -193,6 +193,25 @@ angular
       $.smoothScroll({speed: 2000}, vm.index[string])
     }
 
+
+    //responsiveness code
+    $win.on('resize load', function () {
+      console.log('wendigo')
+      console.log($win.innerWidth())
+      console.log(parseInt($win.innerWidth()/17).toString())
+      $('.name h1').css('font-size', parseInt($win.innerWidth()/10).toString())
+      $('.name h1').css('line-height', parseInt($win.innerWidth()/11).toString() + "px")
+    })
+
+
+
+
+
+
+
+
+
+
     //code for filter
 
     vm.check;
