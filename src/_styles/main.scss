@@ -1,3 +1,9 @@
+@font-face {
+  font-family: 'Capture It';
+  src: url('../assets/Capture_it-webfont.ttf') format('truetype');
+}
+
+
 .overlay {
   background-color: rgba(0,0,0,.5);
   position: fixed;
@@ -37,7 +43,7 @@
   font-family: "Abel";
   h1 {
     font-weight: normal !important;
-    font-family: "Capture It"
+    font-family: "Capture It";
   }
   color: rgb(251,126,41);
 }
@@ -136,6 +142,7 @@ div {
   position: fixed;
   left: 50px;
   top: 275px;
+  z-index: 1000;
   .word {
     height: 40px;
     padding: 3px 4px;
@@ -304,6 +311,7 @@ div {
 
 .hr_holder {
   width: 85%;
+  margin-bottom: 50px;
   hr {
     border: 0;
     background: rgb(251,126,41);
@@ -395,9 +403,10 @@ a{
 
 .mobile_project_title {
   margin-bottom: -50px;
+  text-align: center;
   h1 {
     font-size: 65px;
-    margin: 10 0 0 10px;
+    margin: 10 0 0 0p;
   }
 }
 

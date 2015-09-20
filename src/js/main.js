@@ -118,59 +118,64 @@ angular
       vm.lastY = $win.scrollTop();
     });
 
-
-
+    vm.tripWire = false;
     vm.lastDirection = 'up'
 
     vm.fade = function (direction, object, current, start, end) {
+      vm.tripWire = (current < 400 || $win.width() < 1050) ? false: true;
       var value =(current-start)/(end-start);
       value *= (direction==='in') ? 1:-1;
-      $(object).css('opacity', value)
+      $(object).css('opacity', value);
+      $scope.$apply()
     }
-    vm.drop = function (object, object2, object3, current, start, end, distance) {
+    vm.drop = function (projTitle, rocketTris, hrsArrow, current, start, end, distance) {
       if (start < current && vm.lastY < current && vm.lastDirection === 'up') {
         vm.lastDirection = 'down'
         console.log('going down')
-        var options1
-        var options = options1 = {
-          "margin-top": "160px",
-          "margin-bottom": "-160px",
-          "background-color" : "transparent"
+        var options = {
+          "margin-top": "180px",
+          "margin-bottom": "-180px",
+          "background-color" : "transparent",
         }
         var options2 = {
+          opacity: 0,
+        }
+        var oLeftTriangle = {
           opacity: 0
         }
-
         var options3 = {
-          "margin-left": "-1500px",
-          "margin-right": "0px",
+          "margin-left": "-1150px",
           "color": "rgb(251,126,41)"
         }
 
         var options4 = {
           "z-index": "-10",
           "margin-left": "0px",
-          "margin-top": "230px",
-          "margin-bottom": "-230px"
+          "margin-top": "250px",
+          "margin-bottom": "-250px"
         }
       } else if (vm.lastY > current && current < end && vm.lastDirection === 'down') {
         vm.lastDirection = 'up';
         console.log('going uip');
         var options = {
-          "margin-top": "0px",
+          "margin-top": "5px",
           "margin-bottom": "0px",
-          "background-color" : "rgb(251,126,41)"
+          "background-color" : "rgb(251,126,41)",
+          "width": "88%"
         }
         var options1 = {
           "margin-top": "0px",
           "margin-bottom": "0px",
         }
         var options2 = {
+          opacity: 1,
+        }
+        var oLeftTriangle = {
           opacity: 1
         }
         var options3 = {
-          "margin-left": "10px",
-          "color": "black"
+          "color": "black",
+          "margin-left" : "10px"
         }
         var options4 = {
           "z-index": "0",
@@ -178,16 +183,16 @@ angular
           "margin-top": "0px",
           "margin-bottom": "0px",
           // "margin-left": "194px"
-          // "margin-left": "auto"
+
         }
       }
 
-      object.animate(options, 1000)
-      object2.animate(options4, 1000)
-      object3.animate(options2, 600)
-      $('.project_button .left_triangle').animate(options2, 600);
-      $(object.children('h1:first-child')[0]).animate(options2, 800)
-      $(object.children('h1:last-child')[0]).animate(options3, 800)
+      projTitle.animate(options, 1000)
+      rocketTris.animate(options4, 1000)
+      hrsArrow.animate(options2, 1000)
+      $('.project_button .left_triangle').animate(oLeftTriangle, 600);
+      $(projTitle.children('h1:first-child')[0]).animate(options2, 800)
+      $(projTitle.children('h1:last-child')[0]).animate(options3, 800)
     }
 
     vm.scroll = function (string) {
@@ -197,7 +202,7 @@ angular
     vm.sixhundred = true;
     //responsiveness code
     $win.on('resize load', function () {
-      vm.sixhundred = ($win.innerWidth() >600) ? true: false;
+      vm.sixhundred = ($win.innerWidth() >1040) ? true: false;
       var width = $win.innerWidth();
       $('.name h1').css('font-size', parseInt(width/9.2).toString())
       $('.name h1').css('line-height', parseInt(width/11.5).toString() + "px")

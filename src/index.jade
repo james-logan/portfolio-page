@@ -62,12 +62,12 @@ html(lang="en" ng-app="portfolio")
             input(type="radio" value="care" ng-model="main.check" ng-change="main.color()")
             label Stuff that Probably Matters to You
             //- ng-show="main.menu"
-      .nav()
+      .nav(ng-show="main.tripWire")
         .letter(ng-click="main.scroll('top')" ng-mouseover="main.nav.welcome = true" ng-mouseleave="main.nav.welcome = false") W
         .letter(ng-click="main.scroll('project')" ng-mouseover="main.nav.project = true" ng-mouseleave="main.nav.project = false") P
         .letter(ng-click="main.scroll('skills')" ng-mouseover="main.nav.skills = true" ng-mouseleave="main.nav.skills = false") S
         .letter(ng-click="main.scroll('about')" ng-mouseover="main.nav.about = true" ng-mouseleave="main.nav.about = false") A
-      .nav_ext
+      .nav_ext(ng-show="main.tripWire")
         .word
           p(ng-show="main.nav.welcome") elcome
         .word
@@ -85,7 +85,7 @@ html(lang="en" ng-app="portfolio")
             img(src="assets/rocket16.png")
           .right_triangle
         .project_title(style="margin-top: {{main.mt}}px; margin-bottom: {{main.mb}}px;")
-          h1 Screw This. Take Me To The
+          h1 Forget This. Take Me To The
           h1(style="margin-left: 10px;") Projects
         .hr_holder
           hr
