@@ -129,6 +129,8 @@ angular
       $scope.$apply()
     }
     vm.drop = function (projTitle, rocketTris, hrsArrow, current, start, end, distance) {
+
+      //the if block runs if it's going down, the else block runs if it's going up
       if (start < current && vm.lastY < current && vm.lastDirection === 'up') {
         vm.lastDirection = 'down'
         console.log('going down')
@@ -204,16 +206,17 @@ angular
     $win.on('resize load', function () {
       vm.sixhundred = ($win.innerWidth() >1040) ? true: false;
       var width = $win.innerWidth();
+
       $('.name h1').css('font-size', parseInt(width/9.2).toString())
       $('.name h1').css('line-height', parseInt(width/11.5).toString() + "px")
       $('.name h1').css('letter-spacing', "-" + parseInt(width/80).toString() + "px")
 
 
-      $('.project_title h1').css('font-size', parseInt(width/18.4).toString())
-      $('.project_button .left_triangle').css('border-right-width', parseInt(width/2.7).toString() + "px")
-      $('.project_button .right_triangle').css('border-left-width', parseInt(width/2.7).toString() + "px")
-      $('.project_button .left_triangle').css('border-top-width', parseInt(width/18).toString() + "px")
-      $('.project_button .right_triangle').css('border-top-width', parseInt(width/18).toString() + "px")
+      // $('.project_title h1').css('font-size', parseInt(width/18.4).toString())
+      $('.project_button .left_triangle').css('border-right-width', parseInt(width/4).toString() + "px")
+      $('.project_button .right_triangle').css('border-left-width', parseInt(width/4).toString() + "px")
+      // $('.project_button .left_triangle').css('border-top-width', parseInt(width/18).toString() + "px")
+      // $('.project_button .right_triangle').css('border-top-width', parseInt(width/18).toString() + "px")
       $('.project_title h1').css('letter-spacing', "-" + parseInt(width/200).toString() + "px")
       $scope.$apply()
     })
