@@ -262,7 +262,7 @@ div {
   margin-top: 50px; }
 
 .rocket {
-  width: 7%;
+  width: 75px;
   margin: 0px;
   background: transparent; }
   .rocket img {
@@ -271,7 +271,8 @@ div {
 
 .project_title {
   margin: 0;
-  width: 88%; }
+  width: 88%;
+  max-width: 1200px; }
 
 .project_title {
   background: #fb7e29;
@@ -287,6 +288,7 @@ div {
 
 .hr_holder {
   width: 85%;
+  max-width: 1200px;
   margin-bottom: 50px; }
   .hr_holder hr {
     border: 0;
