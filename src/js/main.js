@@ -203,7 +203,7 @@ angular
 
     vm.sixhundred = true;
     //responsiveness code
-    $win.on('resize load', function () {
+    vm.titleBannerResponsive = function () {
       vm.sixhundred = ($win.innerWidth() >1040) ? true: false;
       var width = $win.innerWidth();
 
@@ -218,8 +218,12 @@ angular
       // $('.project_button .left_triangle').css('border-top-width', parseInt(width/18).toString() + "px")
       // $('.project_button .right_triangle').css('border-top-width', parseInt(width/18).toString() + "px")
       $('.project_title h1').css('letter-spacing', "-" + parseInt(width/200).toString() + "px")
-      $scope.$apply()
-    })
+      // $scope.$apply()
+    }
+
+    vm.titleBannerResponsive();
+    $win.on('resize load', vm.titleBannerResponsive)
+
 
 
 
