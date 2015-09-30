@@ -8,8 +8,11 @@ html(lang="en" ng-app="portfolio")
     link(href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css')
     link(rel='stylesheet' href="css/main.css")
 
+    script(type='text/javascript' src='lib/build.js')
+    script(type='text/javascript' src='js/main.js')
+
   body(ng-controller="Main as main")
-    .overlay(ng-show="main.emailSwitch")
+    .overlay(ng-show="main.emailSwitch" ng-cloak)
         .form_box
           form(ng-submit="main.sendEmail()")
             label(for="email") Email
@@ -20,7 +23,7 @@ html(lang="en" ng-app="portfolio")
             textarea(placeholder="Hello, mr. Logan. I'm writing to let you knew that your are the heir to the sizeable fortune of , the depose prince of Nigeria..." name="message" ng-model="main.email.text" rows="5")
             input(type="submit")
             button(ng-click="main.emailSwitch = false" value="Close") Close
-    .header
+    .header(ng-cloak)
       ul
         li
           a(href="https://github.com/james-logan")
@@ -40,7 +43,7 @@ html(lang="en" ng-app="portfolio")
         li.name
             |   James Logan
     .contain
-      .grand_title
+      .grand_title(ng-cloak)
         //- hr
         .name
           h1 James Barrett Logan
@@ -59,12 +62,12 @@ html(lang="en" ng-app="portfolio")
             input(type="radio" value="care" ng-model="main.check" ng-change="main.color()")
             label Stuff that Probably Matters to You
             //- ng-show="main.menu"
-      .nav(ng-show="main.tripWire")
+      .nav(ng-show="main.tripWire" ng-cloak)
         .letter(ng-click="main.scroll('top')" ng-mouseover="main.nav.welcome = true" ng-mouseleave="main.nav.welcome = false") W
         .letter(ng-click="main.scroll('project')" ng-mouseover="main.nav.project = true" ng-mouseleave="main.nav.project = false") P
         .letter(ng-click="main.scroll('skills')" ng-mouseover="main.nav.skills = true" ng-mouseleave="main.nav.skills = false") S
         .letter(ng-click="main.scroll('about')" ng-mouseover="main.nav.about = true" ng-mouseleave="main.nav.about = false") A
-      .nav_ext(ng-show="main.tripWire")
+      .nav_ext(ng-show="main.tripWire" ng-cloak)
         .word
           p(ng-show="main.nav.welcome") elcome
         .word
@@ -75,7 +78,7 @@ html(lang="en" ng-app="portfolio")
           p(ng-show="main.nav.about") bout Me
 
       .break_box
-      .banner(ng-show="main.sixhundred")
+      .banner(ng-show="main.sixhundred" ng-cloak)
         .project_button
           .left_triangle
           .rocket
@@ -90,9 +93,9 @@ html(lang="en" ng-app="portfolio")
           hr
           .half_moon(ng-click="main.scroll('project')")
             img(src="assets/downarrow.png")
-      .mobile_project_title(ng-hide="main.sixhundred")
+      .mobile_project_title(ng-hide="main.sixhundred" ng-cloak)
         h1 Projects
-      .project_container
+      .project_container(ng-cloak)
         .project
           img.screencap(src="assets/compendium.png")
           .description
@@ -123,10 +126,10 @@ html(lang="en" ng-app="portfolio")
             a(href="https://github.com/james-logan/whackamole") Repo |
             a(href="http://james-logan.github.io/whackamole/")  Site
 
-      .top
+      .top(ng-cloak)
         .top_left
         .top_right
-      .skills_block
+      .skills_block(ng-cloak)
         .small_title
           h1 Tools and Skills
         ul
@@ -144,10 +147,10 @@ html(lang="en" ng-app="portfolio")
           li Mocha/Chai
           li Test Driven Development
           li Ionic
-      .bottom
+      .bottom(ng-cloak)
         .bottom_left
         .bottom_right
-      .about_block
+      .about_block(ng-cloak)
         .picture_box
           //- img(src="assets/hawkecosplay.jpg")
         .about_me_box
@@ -160,10 +163,9 @@ html(lang="en" ng-app="portfolio")
 
           p -James
         .picture_box.two
-      .footer
+      .footer(ng-cloak)
         div Spaceship icon made by <a href="http://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0"> CC BY 3.0</a>
       //- script(type='text/javascript' src='lib/build.js')
       //- script(type='text/javascript' src='js/main.js')
-    script(type='text/javascript' src='lib/build.js')
-    script(type='text/javascript' src='js/main.js')
+
 
