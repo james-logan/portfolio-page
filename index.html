@@ -7,9 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet" type="text/css"/>
     <link rel="stylesheet" href="css/main.css"/>
+    <script type="text/javascript" src="lib/build.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
   </head>
   <body ng-controller="Main as main">
-    <div ng-show="main.emailSwitch" class="overlay">
+    <div ng-show="main.emailSwitch" ng-cloak="ng-cloak" class="overlay">
       <div class="form_box">
         <form ng-submit="main.sendEmail()">
           <label for="email">Email</label>
@@ -23,7 +25,7 @@
         </form>
       </div>
     </div>
-    <div class="header">
+    <div ng-cloak="ng-cloak" class="header">
       <ul>
         <li><a href="https://github.com/james-logan"><span><img src="assets/GitHub-Mark-32px.png"/>
               <p>Github</p></span></a></li>
@@ -35,7 +37,7 @@
       </ul>
     </div>
     <div class="contain">
-      <div class="grand_title">
+      <div ng-cloak="ng-cloak" class="grand_title">
         <div class="name">
           <h1>James Barrett Logan</h1>
         </div>
@@ -59,13 +61,13 @@
           </form>
         </div>
       </div>
-      <div ng-show="main.tripWire" class="nav">
+      <div ng-show="main.tripWire" ng-cloak="ng-cloak" class="nav">
         <div ng-click="main.scroll('top')" ng-mouseover="main.nav.welcome = true" ng-mouseleave="main.nav.welcome = false" class="letter">W</div>
         <div ng-click="main.scroll('project')" ng-mouseover="main.nav.project = true" ng-mouseleave="main.nav.project = false" class="letter">P</div>
         <div ng-click="main.scroll('skills')" ng-mouseover="main.nav.skills = true" ng-mouseleave="main.nav.skills = false" class="letter">S</div>
         <div ng-click="main.scroll('about')" ng-mouseover="main.nav.about = true" ng-mouseleave="main.nav.about = false" class="letter">A</div>
       </div>
-      <div ng-show="main.tripWire" class="nav_ext">
+      <div ng-show="main.tripWire" ng-cloak="ng-cloak" class="nav_ext">
         <div class="word">
           <p ng-show="main.nav.welcome">elcome</p>
         </div>
@@ -80,7 +82,7 @@
         </div>
       </div>
       <div class="break_box"></div>
-      <div ng-show="main.sixhundred" class="banner">
+      <div ng-show="main.sixhundred" ng-cloak="ng-cloak" class="banner">
         <div class="project_button">
           <div class="left_triangle"></div>
           <div class="rocket"><img src="assets/rocket16.png"/></div>
@@ -97,10 +99,10 @@
           <div ng-click="main.scroll('project')" class="half_moon"><img src="assets/downarrow.png"/></div>
         </div>
       </div>
-      <div ng-hide="main.sixhundred" class="mobile_project_title">
+      <div ng-hide="main.sixhundred" ng-cloak="ng-cloak" class="mobile_project_title">
         <h1>Projects</h1>
       </div>
-      <div class="project_container">
+      <div ng-cloak="ng-cloak" class="project_container">
         <div class="project"><img src="assets/compendium.png" class="screencap"/>
           <div class="description">
             <h2>Compendium</h2>
@@ -126,11 +128,11 @@
           </div>
         </div>
       </div>
-      <div class="top">
+      <div ng-cloak="ng-cloak" class="top">
         <div class="top_left"></div>
         <div class="top_right"></div>
       </div>
-      <div class="skills_block">
+      <div ng-cloak="ng-cloak" class="skills_block">
         <div class="small_title">
           <h1>Tools and Skills</h1>
         </div>
@@ -151,11 +153,11 @@
           <li>Ionic</li>
         </ul>
       </div>
-      <div class="bottom">
+      <div ng-cloak="ng-cloak" class="bottom">
         <div class="bottom_left"></div>
         <div class="bottom_right"></div>
       </div>
-      <div class="about_block">
+      <div ng-cloak="ng-cloak" class="about_block">
         <div class="picture_box">
         </div>
         <div class="about_me_box">
@@ -167,11 +169,10 @@
         </div>
         <div class="picture_box two"></div>
       </div>
-      <div class="footer">
+      <div ng-cloak="ng-cloak" class="footer">
         <div>Spaceship icon made by <a href="http://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0"> CC BY 3.0</a></div>
       </div>
+      
     </div>
-    <script type="text/javascript" src="lib/build.js"></script>
-    <script type="text/javascript" src="js/main.js"></script>
   </body>
 </html>
